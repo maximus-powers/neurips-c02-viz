@@ -17,7 +17,6 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
   const { tier, icon, color, metaphor, sizePercent } = useMemo(() => {
     const emission = carbon_emissions_kg
     
-    // Get emissions in the same tier as the current model
     let currentTierEmissions: number[] = []
     if (emission <= 1000) {
       currentTierEmissions = allEmissions.filter(e => e <= 1000)
@@ -31,10 +30,8 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
       currentTierEmissions = allEmissions.filter(e => e > 1000000)
     }
     
-    // Define size range for all tiers (same min-max percentages)
     const tierSizeRange = { min: 30, max: 90 }
     
-    // Helper function to normalize within tier
     const normalizeWithinTier = (value: number, tierValues: number[], range: {min: number, max: number}) => {
       if (tierValues.length <= 1) return (range.min + range.max) / 2
       const minVal = Math.min(...tierValues)
@@ -44,7 +41,6 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
       return range.min + (normalized * (range.max - range.min))
     }
     
-    // Define emission tiers with creative metaphors and normalized sizing
     if (emission <= 1000) {
       return {
         tier: "Personal",
@@ -103,7 +99,6 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         {tier} Scale
       </div>
 
-      {/* Proportional icon visualization */}
       <div className="flex-1 flex items-center justify-center relative">
         <div 
           className={`relative flex items-center justify-center rounded-full ${
@@ -124,7 +119,6 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
           />
         </div>
 
-        {/* Emission amount overlay */}
         <div className="absolute bottom-0 left-0 right-0 text-center">
           <div className="text-xs font-semibold text-gray-700 dark:text-gray-300">
             {carbon_emissions_kg >= 1000000 ? `${(carbon_emissions_kg / 1000000).toFixed(1)}M` :
@@ -134,12 +128,10 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         </div>
       </div>
 
-      {/* Creative metaphor */}
       <div className="mt-2 text-xs text-center text-gray-600 dark:text-gray-400 px-2">
         ≈ {metaphor}
       </div>
 
-      {/* Tree equivalent */}
       <div className="mt-1 flex items-center text-xs text-green-600 dark:text-green-400">
         <TreePine size={12} className="mr-1" />
         {Math.round(trees_equivalent).toLocaleString()} trees
