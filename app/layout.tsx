@@ -6,6 +6,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Carbon Footprints of LMs',
   description: 'Compare CO2 emissions from the training of popular language models, with intuitive analogs.',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
