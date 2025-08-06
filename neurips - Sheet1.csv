@@ -1,0 +1,38 @@
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,Model Name,Year,CO₂ Emissions (tonnes),CO₂ Emissions (kg),"CO₂ Emissions (kg) (R for reported, E for estimated)",Equivalent amount of CO₂  Absorbed by trees /year 25kg,Equivalent  to 1 Human CO₂ Footprint: 4800kg/yr
+,,BERT (base),2018,0.652,652,E (652kg CO₂) [1],26.08 trees	,"0.14 years (~1.7 months)
+"
+,,BERT-Large,2018,2.6,2600,E 2600kg CO₂ [6],104.00 trees	,0.54 years (~6.5 months)
+,,Open Ai GPT-2,2019,0.735,735,E (735 kg of CO₂) [1],29.4 trees        ,0.15 years  (1 month and 25 days)
+,,RoBERTa (Facebook AI),2019,5.5,5500,E (5500 kg CO₂) [6],220.00 trees	,"1.15 years
+"
+,,Open AI GPT-3,2020,502,"502,000",E (502000 kg CO₂) [2],"20,080 trees        ","104.6  years
+"
+,,Bloom (Big Science Initiative) (176B),2022,25,"25,000","E (25,000 kg CO₂) [2]","1,000 trees	","5.21 years
+"
+,,OPT  (175B),2022,70,"70,000","E (70,000 kg CO₂) [2]","2,800 trees	","14.58 years
+"
+,,DeepMind Gopher (280B),2022,352,"352,000","E (352,000 kgCO₂) [2]","14,080 trees	","73.33 years
+"
+,,OpenAI GPT-4,2023,"5,184","5,184,000","E (5,184,000kg of CO₂ [6]","207,360 trees        ","1,080.00 years
+"
+,,Meta Llama 2 (70B),2023,539,"539,000","R (539,000 kg CO₂) [3]","21,560 trees	","112.29 years
+"
+,,Llama 3.1 405B,2024,"8,930",8930000,E 8930000kg CO₂ [6],"357,200 trees        ","1,860.42 years"
+,,Meta Llama 3 (70B),2024,2290,"2,290,000","R (2,290,000 (kg) of CO₂ [4 ]","91,600 trees	","477.08 years
+"
+,,DeepSeek v3,2024,597.000,597000.000,E 597000g of CO₂ [6],"23,880 trees	","124.38 years
+
+"
+,,[1] https://www.register-dynamics.co.uk/blog/artificial-footprints-series-the-environmental-impact-of-ai,,,,,,
+,,[2] https://arxiv.org/pdf/2211.05100,,,,,,
+,,[3 ]https://huggingface.co/meta-llama/Llama-2-70b?utm_,,,,,,
+,,[4 ]https://huggingface.co/meta-llama/Meta-Llama-3-70B,,,,,,
+,,"  global per-capita CO₂ ~4.8 t/year: https://www.worldometers.info/co2-emissions/co2-emissions-per-capita/?#google_vignette
+",,,,,,
+,,6]https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf,,,,,,
+,,"
+https://ecotree.green/en/how-much-co2-does-a-tree-absorb
+Tree absorption ~25 kg CO₂/year",,,,,,

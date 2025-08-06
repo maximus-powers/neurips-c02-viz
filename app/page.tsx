@@ -38,23 +38,18 @@ export default function Main() {
   const getCompanyInfo = (modelName: string) => {
     const companyMap = {
       "BERT (base)": { company: "Google", logo: "/google.svg", cleanName: "BERT (base)" },
-      "ULMfit": { company: "Independent", logo: null, cleanName: "ULMfit" },
-      "OpenAI GPT": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT" },
-      "GPT-2": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-2" },
+      "BERT-Large": { company: "Google", logo: "/google.svg", cleanName: "BERT-Large" },
+      "OpenAI GPT-2": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-2" },
       "RoBERTa (Facebook AI)": { company: "Meta", logo: "/meta.svg", cleanName: "RoBERTa" },
-      "GPT-3": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-3" },
-      "Bloom (Big Science Initiative)": { company: "Big Science Initiative", logo: "/bloom.webp", cleanName: "Bloom" },
-      "OPT": { company: "Meta", logo: "/meta.svg", cleanName: "OPT" },
-      "Gopher": { company: "DeepMind", logo: "/deepmind.svg", cleanName: "Gopher" },
-      "Bard (powered by LaMDA 2)": { company: "Google", logo: "/google.svg", cleanName: "Bard" },
-      "Gemini (Google)": { company: "Google", logo: "/google.svg", cleanName: "Gemini" },
-      "GPT-4": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-4" },
-      "Llama 2": { company: "Meta", logo: "/meta.svg", cleanName: "Llama 2" },
-      "Orca (Microsoft)": { company: "Microsoft", logo: "/microsoft.svg", cleanName: "Orca" },
-      "PaLM 2 (Google)": { company: "Google", logo: "/google.svg", cleanName: "PaLM 2" },
-      "Aya 101 (Cohere for AI)": { company: "Cohere", logo: "/cohere.png", cleanName: "Aya 101" },
-      "Llama 3": { company: "Meta", logo: "/meta.svg", cleanName: "Llama 3" },
-      "DeepSeek-R1 (DeepSeek-AI)": { company: "DeepSeek", logo: "/deepseek.svg", cleanName: "DeepSeek-R1" }
+      "OpenAI GPT-3": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-3" },
+      "Bloom (Big Science Initiative) (176B)": { company: "Big Science Initiative", logo: "/bloom.webp", cleanName: "Bloom (176B)" },
+      "OPT (175B)": { company: "Meta", logo: "/meta.svg", cleanName: "OPT (175B)" },
+      "DeepMind Gopher (280B)": { company: "DeepMind", logo: "/deepmind.svg", cleanName: "Gopher (280B)" },
+      "OpenAI GPT-4": { company: "OpenAI", logo: "/openai.svg", cleanName: "GPT-4" },
+      "Meta Llama 2 (70B)": { company: "Meta", logo: "/meta.svg", cleanName: "Llama 2 (70B)" },
+      "Llama 3.1 405B": { company: "Meta", logo: "/meta.svg", cleanName: "Llama 3.1 405B" },
+      "Meta Llama 3 (70B)": { company: "Meta", logo: "/meta.svg", cleanName: "Llama 3 (70B)" },
+      "DeepSeek v3": { company: "DeepSeek", logo: "/deepseek.svg", cleanName: "DeepSeek v3" }
     }
     return companyMap[modelName as keyof typeof companyMap] || { company: "Unknown", logo: null, cleanName: modelName }
   }
