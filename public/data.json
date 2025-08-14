@@ -83,11 +83,11 @@
   {
     "model_name": "Meta Llama 2 (70B)",
     "year": 2023,
-    "carbon_emissions_kg": 539000,
-    "emission_type": "R (539,000 kg CO₂) [3]",
-    "trees_equivalent": 23434.78,
-    "human_footprint_equivalent": 40833.33,
-    "analogy": "ECO₂= 539,000kg/13.2kg=daily CO₂ emissions of 40,833.33 people"
+    "carbon_emissions_kg": 291420,
+    "emission_type": "R (291,420 kg CO₂) [3]",
+    "trees_equivalent": 12670.43,
+    "human_footprint_equivalent": 22077.27,
+    "analogy": "ECO₂= 291,420kg/13.2kg=daily CO₂ emissions of 22,077.27 people"
   },
   {
     "model_name": "Llama 3.1 405B",
@@ -101,11 +101,11 @@
   {
     "model_name": "Meta Llama 3 (70B)",
     "year": 2024,
-    "carbon_emissions_kg": 2290000,
-    "emission_type": "R (2,290,000 kg of CO₂) [4]",
-    "trees_equivalent": 99565.22,
-    "human_footprint_equivalent": 173484.85,
-    "analogy": "ECO₂= 2,290,000kg/13.2kg= daily CO₂ emissions of 173,484.85 people"
+    "carbon_emissions_kg": 1900000,
+    "emission_type": "R (1,900,000 kg of CO₂) [4]",
+    "trees_equivalent": 82608.70,
+    "human_footprint_equivalent": 143939.39,
+    "analogy": "ECO₂= 1,900,000kg/13.2kg= daily CO₂ emissions of 143,939.39 people"
   },
   {
     "model_name": "DeepSeek v3",
