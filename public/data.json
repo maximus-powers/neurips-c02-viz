@@ -3,117 +3,78 @@
     "model_name": "BERT (base)",
     "year": 2018,
     "carbon_emissions_kg": 652,
-    "emission_type": "E (652kg CO₂) [1]",
-    "trees_equivalent": 28.35,
-    "human_footprint_equivalent": 49.39,
-    "analogy": "ECO₂= 652kg/13.2kg= daily CO₂ emissions of 49.39 people"
+    "emission_type": "E (652kg CO₂) [1]"
   },
   {
     "model_name": "BERT-Large",
     "year": 2018,
     "carbon_emissions_kg": 2600,
-    "emission_type": "E (2600kg CO₂) [6]",
-    "trees_equivalent": 113.04,
-    "human_footprint_equivalent": 196.97,
-    "analogy": "ECO₂= 2600kg/13.2kg= daily CO₂ emissions of 196.97 people"
+    "emission_type": "E (2600kg CO₂) [6]"
   },
   {
     "model_name": "OpenAI GPT-2",
     "year": 2019,
     "carbon_emissions_kg": 735,
-    "emission_type": "E (735 kg of CO₂) [1]",
-    "trees_equivalent": 31.96,
-    "human_footprint_equivalent": 55.68,
-    "analogy": "ECO₂= 735kg/13.2kg= daily CO₂ emissions of 55.68 people"
+    "emission_type": "E (735 kg of CO₂) [1]"
   },
   {
     "model_name": "RoBERTa (Facebook AI)",
     "year": 2019,
     "carbon_emissions_kg": 5500,
-    "emission_type": "E (5500 kg CO₂) [6]",
-    "trees_equivalent": 239.13,
-    "human_footprint_equivalent": 416.67,
-    "analogy": "ECO₂= 5500kg/13.2kg= daily CO₂ emissions of 416.67 people"
+    "emission_type": "E (5500 kg CO₂) [6]"
   },
   {
     "model_name": "OpenAI GPT-3",
     "year": 2020,
     "carbon_emissions_kg": 502000,
-    "emission_type": "E (502000 kg CO₂) [2]",
-    "trees_equivalent": 21826.09,
-    "human_footprint_equivalent": 38030.30,
-    "analogy": "ECO₂= 502,000kg/13.2kg=daily CO₂ emissions of 38,030.30 people"
+    "emission_type": "E (502000 kg CO₂) [2]"
   },
   {
     "model_name": "Bloom (Big Science Initiative) (176B)",
     "year": 2022,
     "carbon_emissions_kg": 25000,
-    "emission_type": "E (25,000 kg CO₂) [2]",
-    "trees_equivalent": 1086.96,
-    "human_footprint_equivalent": 1893.94,
-    "analogy": "ECO₂= 25,000kg/13.2kg= daily CO₂ emissions of 1893.94 people"
+    "emission_type": "E (25,000 kg CO₂) [2]"
   },
   {
     "model_name": "OPT (175B)",
     "year": 2022,
     "carbon_emissions_kg": 70000,
-    "emission_type": "E (70,000 kg CO₂) [2]",
-    "trees_equivalent": 3043.48,
-    "human_footprint_equivalent": 5303.03,
-    "analogy": "ECO₂= 70,000kg/13.2kg= daily CO₂ emissions of 5303.03 people"
+    "emission_type": "E (70,000 kg CO₂) [2]"
   },
   {
     "model_name": "DeepMind Gopher (280B)",
     "year": 2022,
     "carbon_emissions_kg": 352000,
-    "emission_type": "E (352,000 kgCO₂) [2]",
-    "trees_equivalent": 15304.35,
-    "human_footprint_equivalent": 26666.67,
-    "analogy": "ECO₂= 352000/13.2kg= daily CO₂ emissions of 26,666.67 people"
+    "emission_type": "E (352,000 kgCO₂) [2]"
   },
   {
     "model_name": "OpenAI GPT-4",
     "year": 2023,
     "carbon_emissions_kg": 5184000,
-    "emission_type": "E (5,184,000kg of CO₂) [6]",
-    "trees_equivalent": 225391.30,
-    "human_footprint_equivalent": 392727.27,
-    "analogy": "ECO₂= 5,184,000kg/13.2kg=daily CO₂ emissions of 392,727.27 people"
+    "emission_type": "E (5,184,000kg of CO₂) [6]"
   },
   {
     "model_name": "Meta Llama 2 (70B)",
     "year": 2023,
     "carbon_emissions_kg": 291420,
-    "emission_type": "R (291,420 kg CO₂) [3]",
-    "trees_equivalent": 12670.43,
-    "human_footprint_equivalent": 22077.27,
-    "analogy": "ECO₂= 291,420kg/13.2kg=daily CO₂ emissions of 22,077.27 people"
+    "emission_type": "R (291,420 kg CO₂) [3]"
   },
   {
     "model_name": "Llama 3.1 405B",
     "year": 2024,
     "carbon_emissions_kg": 8930000,
-    "emission_type": "E (8930000kg CO₂) [6]",
-    "trees_equivalent": 388260.87,
-    "human_footprint_equivalent": 676515.15,
-    "analogy": "ECO₂= 8,930,000kg/13.2kg= daily CO₂ emissions of 676,515.15 people"
+    "emission_type": "E (8930000kg CO₂) [6]"
   },
   {
     "model_name": "Meta Llama 3 (70B)",
     "year": 2024,
     "carbon_emissions_kg": 1900000,
-    "emission_type": "R (1,900,000 kg of CO₂) [4]",
-    "trees_equivalent": 82608.70,
-    "human_footprint_equivalent": 143939.39,
-    "analogy": "ECO₂= 1,900,000kg/13.2kg= daily CO₂ emissions of 143,939.39 people"
+    "emission_type": "R (1,900,000 kg of CO₂) [4]"
   },
   {
     "model_name": "DeepSeek v3",
     "year": 2024,
     "carbon_emissions_kg": 597000,
-    "emission_type": "E (597000kg of CO₂) [6]",
-    "trees_equivalent": 25956.52,
-    "human_footprint_equivalent": 45227.27,
-    "analogy": "ECO₂= 597,000kg/13.2kg=daily CO₂ emissions of 45,227.27 people"
+    "emission_type": "E (597000kg of CO₂) [6]"
   }
 ]

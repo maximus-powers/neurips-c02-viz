@@ -27,9 +27,6 @@ type ModelData = {
   year: number
   carbon_emissions_kg: number
   emission_type: string
-  trees_equivalent: number
-  human_footprint_equivalent: number
-  analogy: string
 }
 
 export default function Main() {
@@ -57,6 +54,23 @@ export default function Main() {
   const [selectedCompanies, setSelectedCompanies] = useState<string[]>([])
   const [sortBy, setSortBy] = useState<"year" | "emissions" | "human_footprint" | "name">("emissions")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+
+  // Constants for calculations
+  const CO2_PER_TREE_PER_YEAR = 25 // kg
+  const CO2_PER_PERSON_PER_DAY = 13.2 // kg
+
+  const calculateTreesEquivalent = (carbonEmissionsKg: number) => {
+    return carbonEmissionsKg / CO2_PER_TREE_PER_YEAR
+  }
+
+  const calculateHumanFootprintEquivalent = (carbonEmissionsKg: number) => {
+    return carbonEmissionsKg / CO2_PER_PERSON_PER_DAY
+  }
+
+  const generateAnalogy = (carbonEmissionsKg: number) => {
+    const people = calculateHumanFootprintEquivalent(carbonEmissionsKg)
+    return `ECO₂= ${carbonEmissionsKg.toLocaleString()}kg/${CO2_PER_PERSON_PER_DAY}kg= daily CO₂ emissions of ${people.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} people`
+  }
 
   const getModelScale = (emission: number): string => {
     if (emission <= 1000) return "Personal"
@@ -105,8 +119,8 @@ export default function Main() {
           bValue = b.carbon_emissions_kg
           break
         case "human_footprint":
-          aValue = a.human_footprint_equivalent
-          bValue = b.human_footprint_equivalent
+          aValue = calculateHumanFootprintEquivalent(a.carbon_emissions_kg)
+          bValue = calculateHumanFootprintEquivalent(b.carbon_emissions_kg)
           break
         case "year":
           aValue = a.year
@@ -310,7 +324,7 @@ export default function Main() {
                   <CreativeVisualization
                     model_name={model.model_name}
                     carbon_emissions_kg={model.carbon_emissions_kg}
-                    trees_equivalent={model.trees_equivalent}
+                    trees_equivalent={calculateTreesEquivalent(model.carbon_emissions_kg)}
                     allEmissions={displayedData.map(m => m.carbon_emissions_kg)}
                   />
                 </div>
@@ -330,34 +344,34 @@ export default function Main() {
                   <div className="flex items-start space-x-2 pt-3 border-t">
                     <Leaf className="h-4 w-4 mt-1 text-green-500 flex-shrink-0" />
                     <span>
-                      Equivalent to <strong>{Math.round(model.trees_equivalent).toLocaleString()} trees'</strong>{" "}
+                      Equivalent to <strong>{Math.round(calculateTreesEquivalent(model.carbon_emissions_kg)).toLocaleString()} trees'</strong>{" "}
                       annual CO₂ absorption.
                     </span>
                   </div>
                   <div className="flex items-start space-x-2">
                     <Users className="h-4 w-4 mt-1 text-orange-500 flex-shrink-0" />
                     <span>
-                      Equivalent to one person's daily CO₂ footprint for{" "}
+                      Equivalent to one person's CO₂ footprint over{" "}
                       <strong>
                         {(() => {
-                          const days = Math.round(model.human_footprint_equivalent)
+                          const days = Math.round(calculateHumanFootprintEquivalent(model.carbon_emissions_kg))
                           if (days >= 365) {
                             const years = Math.round(days / 365)
                             return `${years.toLocaleString()} ${years === 1 ? 'year' : 'years'}`
                           } else if (days > 30) {
-                            const months = Math.round(days / 30.44) // Average days per month
+                            const months = Math.round(days / 30.44)
                             return `${months.toLocaleString()} ${months === 1 ? 'month' : 'months'}`
                           } else {
                             return `${days.toLocaleString()} ${days === 1 ? 'day' : 'days'}`
                           }
-                        })()} 
+                        })()}
                       </strong>.
                     </span>
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <p className="text-sm sm:text-xs text-gray-500 dark:text-gray-400 italic">{model.analogy}</p>
+                <p className="text-sm sm:text-xs text-gray-500 dark:text-gray-400 italic">{generateAnalogy(model.carbon_emissions_kg)}</p>
               </CardFooter>
             </Card>
           ))}

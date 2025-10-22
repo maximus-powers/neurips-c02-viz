@@ -26,12 +26,12 @@ export function MetricsKey() {
     {
       icon: TreePine,
       color: "text-grey-600",
-      bgColor: "bg-zinc-700 text-white dark:bg-grey-900/20", 
+      bgColor: "bg-zinc-700 text-white dark:bg-grey-900/20",
       title: "Universal References",
       items: [
         "Estimating that 1 mature tree absorbs 25 kg CO₂ per year",
         "Estimating that average human daily footprint is 13.2 kg CO₂",
-        "Estimating that 1 liter of gasoline emits 4.6 kg CO₂ when burned"
+        "Estimating that 1 liter of gasoline emits 2.3 kg CO₂ when burned"
       ]
     },
     {
@@ -40,8 +40,8 @@ export function MetricsKey() {
       bgColor: "bg-green-50 dark:bg-green-900/20",
       title: "Personal Scale (<1,000 kg)",
       items: [
-        "< 217 liters of gasoline",
-        "Estimating that 1 liter of gasoline emits 4.6 kg of CO₂",
+        "< 435 liters of gasoline",
+        "Estimating that 1 liter of gasoline emits 2.3 kg of CO₂",
         "On the scale of personal daily activities"
       ]
     },

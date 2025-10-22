@@ -46,7 +46,7 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         tier: "Personal",
         icon: FaWalking,
         color: "text-green-500",
-        metaphor: `${Math.round(emission / 4.6).toLocaleString()} liters of gasoline`,
+        metaphor: `${Math.round(emission / 2.3).toLocaleString()} liters of gasoline`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     } else if (emission <= 10000) {
@@ -78,7 +78,7 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         tier: "Megascale",
         icon: MdElectricBolt,
         color: "text-red-500",
-        metaphor: `${Math.round(emission / 1000000).toLocaleString()} million kg - mountain-scale impact`,
+        metaphor: `Comprable to a factory's annual emissions`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     }
