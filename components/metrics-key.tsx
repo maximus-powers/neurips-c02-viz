@@ -40,30 +40,30 @@ export function MetricsKey() {
       bgColor: "bg-green-50 dark:bg-green-900/20",
       title: "Personal Scale (<1,000 kg)",
       items: [
-        "< 435 liters of gasoline",
+        "0-435 liters of gasoline",
         "Estimating that 1 liter of gasoline emits 2.3 kg of CO₂",
         "On the scale of personal daily activities"
       ]
     },
     {
       icon: FaHome,
-      color: "text-blue-500", 
+      color: "text-blue-500",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
       title: "Household Scale (1k-10k kg)",
       items: [
-        "1.4 homes' annual electricity consumption",
-        "Estimating that 1 home uses 7,300 kg CO₂ of electricity per year",
+        "0.2-2.1 homes' annual electricity consumption",
+        "EPA estimates 1 home uses 4,798 kg CO₂ of electricity per year",
         "On the scale of residential energy use"
       ]
     },
     {
       icon: FaBuilding,
       color: "text-yellow-500",
-      bgColor: "bg-yellow-50 dark:bg-yellow-900/20", 
+      bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
       title: "Commercial Scale (10k-100k kg)",
       items: [
-        "2.5 cars driven for a full year",
-        "Estimating that 1 car driven for a year emits 40,000 kg CO₂",
+        "2.2-21.7 cars driven for a full year",
+        "EPA estimates 1 car driven for a year emits 4,600 kg CO₂",
         "On the scale of small business operations"
       ]
     },
@@ -73,8 +73,8 @@ export function MetricsKey() {
       bgColor: "bg-orange-50 dark:bg-orange-900/20",
       title: "Industrial Scale (100k-1M kg)",
       items: [
-        "11 round-trip flights NYC to London",
-        "Estimating that 1 round-trip flight NYC-London emits 90,000 kg CO₂",
+        "85-847 round-trip flights NYC to London",
+        "Estimating that 1 round-trip flight NYC-London emits 1,180 kg CO₂ (590 kg one way)",
         "On the scale of manufacturing operations"
       ]
     },
@@ -84,8 +84,8 @@ export function MetricsKey() {
       bgColor: "bg-red-50 dark:bg-red-900/20",
       title: "Megascale (1M+ kg)",
       items: [
-        "Multiple millions of kg CO₂",
-        "Industrial scale impact beyond normal comparisons",
+        "2.3-20.6 hours of a coal power plant",
+        "Estimating 3,790,000,000 kg CO₂/year per plant (EPA 2024 data) = 432,648 kg/hour",
         "On the scale of major power generation facilities"
       ]
     }
@@ -153,7 +153,7 @@ export function MetricsKey() {
           <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
             <h4 className="font-semibold text-base sm:text-sm mb-4">References</h4>
             <div className="text-sm sm:text-xs text-gray-600 dark:text-gray-400">
-              [1] <a href="https://www.register-dynamics.co.uk/blog/artificial-footprints-series-the-environmental-impact-of-ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Register Dynamics - The Environmental Impact of AI</a>, [2] <a href="https://arxiv.org/pdf/2211.05100" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">ArXiv - Power Hungry Processing: Watts Driving the Cost of AI Deployment?</a>, [3] <a href="https://huggingface.co/meta-llama/Llama-2-70b" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Hugging Face - Llama 2 70B Model</a>, [4] <a href="https://huggingface.co/meta-llama/Meta-Llama-3-70B" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Hugging Face - Meta Llama 3 70B Model</a>, [5] <a href="https://www.worldometers.info/co2-emissions/co2-emissions-per-capita/#google_vignette" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Worldometers - CO₂ Emissions Per Capita (global per-capita CO₂ ~4.8 t/year)</a>, [6] <a href="https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">HAI AI Index Report 2025</a>, [7] <a href="https://ecotree.green/en/how-much-co2-does-a-tree-absorb" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">EcoTree - Tree CO₂ Absorption (~25 kg CO₂/year)</a>
+              [1] <a href="https://www.register-dynamics.co.uk/blog/artificial-footprints-series-the-environmental-impact-of-ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Register Dynamics - The Environmental Impact of AI</a>, [2] <a href="https://arxiv.org/pdf/2211.05100" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">ArXiv - Power Hungry Processing: Watts Driving the Cost of AI Deployment?</a>, [3] <a href="https://huggingface.co/meta-llama/Llama-2-70b" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Hugging Face - Llama 2 70B Model</a>, [4] <a href="https://huggingface.co/meta-llama/Meta-Llama-3-70B" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Hugging Face - Meta Llama 3 70B Model</a>, [5] <a href="https://www.worldometers.info/co2-emissions/co2-emissions-per-capita/#google_vignette" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">Worldometers - CO₂ Emissions Per Capita (global per-capita CO₂ ~4.8 t/year)</a>, [6] <a href="https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">HAI AI Index Report 2025</a>, [7] <a href="https://ecotree.green/en/how-much-co2-does-a-tree-absorb" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">EcoTree - Tree CO₂ Absorption (~25 kg CO₂/year)</a>, [8] <a href="https://travelnav.com/emissions-from-london-united-kingdom-to-new-york-ny" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">TravelNav - Flight Emissions NYC-London (~590 kg CO₂ one way)</a>, [9] <a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">EPA - Home electricity: 4,798 kg CO₂/year; Car: 4,600 kg CO₂/year; Coal plant: 3.79M metric tons/year</a>
             </div>
           </div>
         </CardContent>

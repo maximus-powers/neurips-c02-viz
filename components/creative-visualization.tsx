@@ -51,18 +51,18 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
       }
     } else if (emission <= 10000) {
       return {
-        tier: "Household", 
+        tier: "Household",
         icon: FaHome,
         color: "text-blue-500",
-        metaphor: `${Math.round(emission / 7300).toLocaleString()} homes' annual electricity`,
+        metaphor: `${(emission / 4798).toFixed(1)} homes' annual electricity`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     } else if (emission <= 100000) {
       return {
         tier: "Commercial",
         icon: FaBuilding,
-        color: "text-yellow-500", 
-        metaphor: `${Math.round(emission / 40000).toLocaleString()} cars driven for a year`,
+        color: "text-yellow-500",
+        metaphor: `${(emission / 4600).toFixed(1)} cars driven for a year`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     } else if (emission <= 1000000) {
@@ -70,7 +70,7 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         tier: "Industrial",
         icon: TbBuildingFactory2,
         color: "text-orange-500",
-        metaphor: `${Math.round(emission / 90000).toLocaleString()} round-trip flights NYC-London`,
+        metaphor: `${Math.round(emission / 1180).toLocaleString()} round-trip flights NYC-London`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     } else {
@@ -78,7 +78,7 @@ export function CreativeVisualization({ model_name, carbon_emissions_kg, trees_e
         tier: "Megascale",
         icon: MdElectricBolt,
         color: "text-red-500",
-        metaphor: `Comprable to a factory's annual emissions`,
+        metaphor: `${(emission / 432648).toFixed(1)} hours of a coal power plant`,
         sizePercent: normalizeWithinTier(emission, currentTierEmissions, tierSizeRange)
       }
     }
