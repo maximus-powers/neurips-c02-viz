@@ -1,10 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { TreePine, ChevronDown, ChevronUp } from "lucide-react"
-import { FaWalking, FaHome, FaBuilding } from "react-icons/fa"
+import { TreePine, ChevronDown, ChevronUp, Plane } from "lucide-react"
+import { FaWalking, FaCar } from "react-icons/fa"
 import { TbBuildingFactory2 } from "react-icons/tb"
-import { MdElectricBolt } from "react-icons/md"
 import { IoInformationCircleOutline } from "react-icons/io5"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -30,7 +29,7 @@ export function MetricsKey() {
       title: "Universal References",
       items: [
         "Estimating that 1 mature tree absorbs 25 kg CO₂ per year",
-        "Estimating that average human daily footprint is 13.2 kg CO₂",
+        "Global avg human daily footprint: 13.2 kg CO₂ (4.8 tonnes/year ÷ 365)",
         "Estimating that 1 liter of gasoline emits 2.3 kg CO₂ when burned"
       ]
     },
@@ -40,49 +39,38 @@ export function MetricsKey() {
       bgColor: "bg-green-50 dark:bg-green-900/20",
       title: "Personal Scale (<1,000 kg)",
       items: [
-        "0-435 liters of gasoline",
-        "Estimating that 1 liter of gasoline emits 2.3 kg of CO₂",
+        "0-76 days of global avg human daily footprint",
+        "Global avg: 4.8 tonnes/year (Worldometers) = 13.2 kg CO₂/day",
         "On the scale of personal daily activities"
       ]
     },
     {
-      icon: FaHome,
+      icon: FaCar,
       color: "text-blue-500",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
-      title: "Household Scale (1k-10k kg)",
+      title: "Car Scale (1k-100k kg)",
       items: [
-        "0.2-2.1 homes' annual electricity consumption",
-        "EPA estimates 1 home uses 4,798 kg CO₂ of electricity per year",
-        "On the scale of residential energy use"
+        "0.2-23.3 homes' annual electricity or cars driven for a year",
+        "EPA estimates: 1 home uses 4,798 kg CO₂/year; 1 car emits 4,290 kg CO₂/year",
+        "On the scale of household and transportation energy use"
       ]
     },
     {
-      icon: FaBuilding,
+      icon: Plane,
       color: "text-yellow-500",
       bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
-      title: "Commercial Scale (10k-100k kg)",
+      title: "Plane Scale (100k-1M kg)",
       items: [
-        "2.2-21.7 cars driven for a full year",
-        "EPA estimates 1 car driven for a year emits 4,600 kg CO₂",
-        "On the scale of small business operations"
+        "85-847 round-trip flights NYC to London",
+        "Estimating that 1 round-trip flight NYC-London emits 1,180 kg CO₂ (590 kg one way)",
+        "On the scale of aviation and large operations"
       ]
     },
     {
       icon: TbBuildingFactory2,
       color: "text-orange-500",
       bgColor: "bg-orange-50 dark:bg-orange-900/20",
-      title: "Industrial Scale (100k-1M kg)",
-      items: [
-        "85-847 round-trip flights NYC to London",
-        "Estimating that 1 round-trip flight NYC-London emits 1,180 kg CO₂ (590 kg one way)",
-        "On the scale of manufacturing operations"
-      ]
-    },
-    {
-      icon: MdElectricBolt,
-      color: "text-red-500",
-      bgColor: "bg-red-50 dark:bg-red-900/20",
-      title: "Megascale (1M+ kg)",
+      title: "Industrial Scale (1M+ kg)",
       items: [
         "2.3-20.6 hours of a coal power plant",
         "Estimating 3,790,000,000 kg CO₂/year per plant (EPA 2024 data) = 432,648 kg/hour",

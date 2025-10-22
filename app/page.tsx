@@ -12,10 +12,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Users, Leaf, ArrowUpDown, ArrowUp, ArrowDown, TreePine } from "lucide-react"
-import { FaWalking, FaHome, FaBuilding } from "react-icons/fa"
+import { Users, Leaf, ArrowUpDown, ArrowUp, ArrowDown, TreePine, Plane } from "lucide-react"
+import { FaWalking, FaCar } from "react-icons/fa"
 import { TbBuildingFactory2 } from "react-icons/tb"
-import { MdElectricBolt } from "react-icons/md"
 import { CreativeVisualization } from "@/components/creative-visualization"
 import { MetricsKey } from "@/components/metrics-key"
 
@@ -68,30 +67,70 @@ export default function Main() {
   }
 
   const generateAnalogy = (carbonEmissionsKg: number) => {
-    const people = calculateHumanFootprintEquivalent(carbonEmissionsKg)
-    return `ECO₂= ${carbonEmissionsKg.toLocaleString()}kg/${CO2_PER_PERSON_PER_DAY}kg= daily CO₂ emissions of ${people.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} people`
+    const scale = getModelScale(carbonEmissionsKg)
+
+    if (scale === "Personal") {
+      const days = (carbonEmissionsKg / 13.2).toFixed(1)
+      return (
+        <>
+          {carbonEmissionsKg.toLocaleString()} kg CO₂ ÷ 13.2 kg/day (global avg) = {days} days of human footprint (
+          <a href="https://www.worldometers.info/co2-emissions/co2-emissions-per-capita/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
+            source
+          </a>)
+        </>
+      )
+    } else if (scale === "Car") {
+      const homes = (carbonEmissionsKg / 4798).toFixed(1)
+      const cars = (carbonEmissionsKg / 4290).toFixed(1)
+      return (
+        <>
+          {carbonEmissionsKg.toLocaleString()} kg CO₂ ÷ 4,798 kg/home/year = {homes} homes or ÷ 4,290 kg/car/year = {cars} cars (
+          <a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
+            source
+          </a>)
+        </>
+      )
+    } else if (scale === "Plane") {
+      const flights = Math.round(carbonEmissionsKg / 1180)
+      return (
+        <>
+          {carbonEmissionsKg.toLocaleString()} kg CO₂ ÷ 1,180 kg/flight = {flights.toLocaleString()} round-trip flights NYC-London (
+          <a href="https://travelnav.com/emissions-from-london-united-kingdom-to-new-york-ny" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
+            source
+          </a>)
+        </>
+      )
+    } else {
+      const hours = (carbonEmissionsKg / 432648).toFixed(1)
+      return (
+        <>
+          {carbonEmissionsKg.toLocaleString()} kg CO₂ ÷ 432,648 kg/hour = {hours} hours of coal power plant (
+          <a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
+            source
+          </a>)
+        </>
+      )
+    }
   }
 
   const getModelScale = (emission: number): string => {
     if (emission <= 1000) return "Personal"
-    if (emission <= 10000) return "Household"
-    if (emission <= 100000) return "Commercial"
-    if (emission <= 1000000) return "Industrial"
-    return "Megascale"
+    if (emission <= 100000) return "Car"
+    if (emission <= 1000000) return "Plane"
+    return "Industrial"
   }
 
   const getScaleInfo = (scale: string) => {
     const scaleMap = {
       "Personal": { icon: FaWalking, color: "text-green-500", bgColor: "bg-green-100 dark:bg-green-900/30" },
-      "Household": { icon: FaHome, color: "text-blue-500", bgColor: "bg-blue-100 dark:bg-blue-900/30" },
-      "Commercial": { icon: FaBuilding, color: "text-yellow-500", bgColor: "bg-yellow-100 dark:bg-yellow-900/30" },
-      "Industrial": { icon: TbBuildingFactory2, color: "text-orange-500", bgColor: "bg-orange-100 dark:bg-orange-900/30" },
-      "Megascale": { icon: MdElectricBolt, color: "text-red-500", bgColor: "bg-red-100 dark:bg-red-900/30" }
+      "Car": { icon: FaCar, color: "text-blue-500", bgColor: "bg-blue-100 dark:bg-blue-900/30" },
+      "Plane": { icon: Plane, color: "text-yellow-500", bgColor: "bg-yellow-100 dark:bg-yellow-900/30" },
+      "Industrial": { icon: TbBuildingFactory2, color: "text-orange-500", bgColor: "bg-orange-100 dark:bg-orange-900/30" }
     }
     return scaleMap[scale as keyof typeof scaleMap]
   }
 
-  const scales = ["Personal", "Household", "Commercial", "Industrial", "Megascale"]
+  const scales = ["Personal", "Car", "Plane", "Industrial"]
 
   useEffect(() => {
     fetch("/data.json")
@@ -371,7 +410,9 @@ export default function Main() {
                 </div>
               </CardContent>
               <CardFooter>
-                <p className="text-sm sm:text-xs text-gray-500 dark:text-gray-400 italic">{generateAnalogy(model.carbon_emissions_kg)}</p>
+                <p className="text-sm sm:text-xs text-gray-500 dark:text-gray-400 italic">
+                  {generateAnalogy(model.carbon_emissions_kg)}
+                </p>
               </CardFooter>
             </Card>
           ))}
